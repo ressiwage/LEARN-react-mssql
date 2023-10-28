@@ -22,12 +22,21 @@ function useOutsideAlerter(ref, close_func) {
 function Modal(props) {
 
     const wrapperRef = useRef(null);
+    const close = (e)=>{props.close_func();};
     useOutsideAlerter(wrapperRef, props.close_func);
-
     return <div >
-        <div class="position-absolute d-block top-0 start-0 w-100 h-100 bg-dark opacity-25"></div>
-        <div ref={wrapperRef} class="my-modal position-absolute d-block top-50 start-50  bg-white translate-middle p-4 rounded-3  shadow">
-            <h1>{props.user.name}</h1>
+        <div class="position-fixed d-block top-0 start-0 w-100 h-100 bg-dark opacity-25"></div>
+        <div ref={wrapperRef} class="my-modal position-fixed d-block top-50 start-50  bg-white translate-middle p-4 rounded-3  shadow">
+            <div class="container">
+                <div class="row justify-content-around mt-2">
+                    <h1 class="col-11">{props.user.name}</h1>
+                    <span onClick={close} class="col-1 material-symbols-outlined ms-auto close-button text-dark">
+                        close
+                    </span>
+                </div>
+            </div>
+
+
             <br />
             <div class="container">
                 <div class="row justify-content-around mt-2">
