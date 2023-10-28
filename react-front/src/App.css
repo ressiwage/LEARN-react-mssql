@@ -15,3 +15,6 @@ img{
 .close-button{
   text-decoration:none;
 }
+.card--container{
+  min-height: 50vh;
+}

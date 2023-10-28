@@ -14,7 +14,7 @@ function Card(props) {
 
     return (
         <div class="Card col-4 pt-3 ps-1 container " >
-            <div class="container p-4 rounded-3  shadow " onClick={handleModalOpen}>
+            <div class="card--container container p-4 rounded-3 shadow " onClick={handleModalOpen}>
                 <h2>{props.user.name}</h2>
                 <span class="material-symbols-outlined inline-icon">mail</span>
 
